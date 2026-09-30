@@ -238,10 +238,9 @@ function HeroIntro({ onExplore, onRestart }) {
 
             {/* RESUME BUTTON */}
             <a
-              href="/Resume_BHAKTI_KAMBLE.pdf"
+              href={`${import.meta.env.BASE_URL}Resume_BHAKTI_KAMBLE.pdf`}
               target="_blank"
               rel="noopener noreferrer"
-              className="final-resume-button"
             >
               <span>Resume</span>
               <span className="resume-arrow">
