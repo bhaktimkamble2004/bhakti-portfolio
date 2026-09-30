@@ -1,0 +1,55 @@
+.portfolio {
+  animation: portfolioEnter 0.8s ease forwards;
+}
+
+
+@keyframes portfolioEnter {
+
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+.home-section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 6%;
+
+  background: #07111f;
+  color: white;
+}
+
+
+.home-section h1 {
+  font-size: clamp(3rem, 7vw, 8rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.map-placeholder {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #07131c;
+
+  color: white;
+}

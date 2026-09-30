@@ -1,0 +1,413 @@
+/* =========================================
+   INTRO SCREEN
+========================================= */
+
+.intro-loader {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #f1eef4;
+  color: #080808;
+
+  overflow: hidden;
+
+  z-index: 9999;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.intro-logo {
+  position: absolute;
+
+  top: 50px;
+  left: 4%;
+
+  color: #080808;
+
+  text-decoration: none;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  z-index: 20;
+}
+
+.intro-logo span {
+  color: #8c67d7;
+}
+
+
+/* =========================================
+   GEOSPATIAL SYMBOL
+========================================= */
+
+.geo-symbol {
+  position: absolute;
+
+  top: 45px;
+  right: 4%;
+
+  width: 85px;
+  height: 55px;
+
+  z-index: 20;
+}
+
+
+.geo-symbol span {
+  position: absolute;
+
+  width: 4px;
+  background: #080808;
+
+  border-radius: 10px;
+}
+
+
+/* individual lines */
+
+.geo-symbol span:nth-child(1) {
+  height: 30px;
+  left: 5px;
+  top: 0;
+}
+
+.geo-symbol span:nth-child(2) {
+  height: 29px;
+  left: 30px;
+  top: 20px;
+}
+
+.geo-symbol span:nth-child(3) {
+  height: 30px;
+  left: 55px;
+  top: 0;
+}
+
+.geo-symbol span:nth-child(4) {
+  height: 30px;
+  left: 80px;
+  top: 20px;
+}
+
+
+/* purple point */
+
+.geo-symbol i {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  background: #a779ff;
+
+  border-radius: 50%;
+
+  left: 20px;
+  top: 11px;
+
+  box-shadow: 0 0 12px rgba(167, 121, 255, 0.8);
+}
+
+
+/* =========================================
+   MOVING TEXT
+========================================= */
+
+.marquee-container {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+
+  transform: translateY(-50%);
+
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+
+  gap: 55px;
+
+  animation: moveText 18s linear infinite;
+}
+
+
+.marquee-track span {
+  font-size: clamp(4rem, 8vw, 9rem);
+
+  font-weight: 500;
+
+  letter-spacing: -5px;
+
+  line-height: 1;
+
+  color: #080808;
+}
+
+
+.marquee-track b {
+  font-size: 5rem;
+
+  color: #080808;
+
+  font-weight: 400;
+}
+
+
+@keyframes moveText {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* =========================================
+   LOADER BUTTON
+========================================= */
+
+.loader-button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 360px;
+  height: 105px;
+
+  border-radius: 60px;
+
+  background: #050505;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  padding: 0 40px;
+
+  overflow: hidden;
+
+  z-index: 10;
+
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.18);
+
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    transform 0.5s ease;
+
+  font-family: inherit;
+}
+
+
+/* Loading */
+
+.loading-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.loading-number {
+  font-size: 1.05rem;
+  color: #aaa;
+}
+
+.loading-square {
+  width: 13px;
+  height: 22px;
+  background: white;
+}
+
+
+/* progress line */
+
+.progress-line {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  height: 5px;
+
+  background: #9d75ef;
+
+  transition: width 0.1s linear;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.loader-button.completed {
+  cursor: pointer;
+
+  gap: 30px;
+}
+
+
+.loader-button.completed:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.04);
+}
+
+
+.loader-button.completed span:first-child {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.welcome-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.welcome-arrow {
+  font-size: 1.7rem;
+   transition: transform 0.3s ease;
+}
+
+
+
+.loader-button.completed:hover .welcome-arrow {
+  transform: translateX(8px);
+}
+
+
+/* =========================================
+   COORDINATES
+========================================= */
+
+.intro-coordinates {
+  position: absolute;
+
+  bottom: 35px;
+  left: 4%;
+
+  display: flex;
+
+  gap: 20px;
+
+  font-family: monospace;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 1px;
+
+  color: #777;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .intro-logo {
+    top: 30px;
+    left: 25px;
+
+    font-size: 1rem;
+  }
+
+
+  .geo-symbol {
+    top: 25px;
+    right: 25px;
+
+    transform: scale(0.8);
+  }
+
+
+  .marquee-track {
+    gap: 30px;
+
+    animation-duration: 12s;
+  }
+
+
+ .marquee-track span {
+  font-size: clamp(3.5rem, 6vw, 7rem);
+
+  font-weight: 500;
+
+  letter-spacing: -4px;
+
+  line-height: 1;
+
+  color: #080808;
+}
+
+
+ .marquee-track b {
+  font-size: 3.5rem;
+
+  color: #080808;
+
+  font-weight: 400;
+}
+
+
+  .loader-button {
+    width: 310px;
+    height: 100px;
+
+    padding: 0 35px;
+
+    gap: 25px;
+  }
+
+
+  .loading-title {
+    font-size: 1rem;
+  }
+
+
+  .loading-number {
+    font-size: 1rem;
+  }
+
+
+  .loading-square {
+    width: 12px;
+    height: 22px;
+  }
+
+
+  .intro-coordinates {
+    left: 25px;
+    bottom: 25px;
+  }
+
+}
